@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Viewer</title>
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Some stolen scripts from internet hehe -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+   
+</head>
+<body>
+    <h1 style="text-align: center;">Tech Stack docs Blog by Izhaan</h1>
+    <p>This is a Website made with base html css to read a markdown file (.md) and display it in a webpage
+    </p>
+    <p>
+        Code for this can be found on my github page
+    </p>
+    
+    <div style="display: flex; flex-direction: row; justify-content: space-around; gap: 20px;">
+
+        <a href="https://github.com/izhaan-raza" style="color: #58a6ff !important;" class="btn" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://github.com/izhaan-raza" class="btn" style="color: pink !important;" target="_blank">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+    </div>
+
+  
+     
+    <nav id="nav-links">
+        <a href="#" data-file="NodeMcu.md" class="active">NodeMcu</a>
+        <a href="#" data-file="PythonRoadMap.md">PythonRoadmap</a>
+        <a href="#" data-file="handTrackerWjs.md">JavaScript Handtracker</a>
+        <a href="#" data-file="handTrackerWpy.md">Python Handtracker module</a>
+    </nav>
+
+    <div id="markdown-container">Select a file from the navigation above to view its content.</div>
+
+    <footer>
+        'sussy ahh copyright Logo'  Made by YODA | Inspired by GitHub
+    </footer>
+
+    <script>
+        const navLinks = document.querySelectorAll('nav a');
+
+        function loadMarkdown(file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(markdown => {
+                    const container = document.getElementById('markdown-container');
+                    container.innerHTML = marked.parse(markdown);
+
+           
+                    document.querySelectorAll('pre code').forEach(block => {
+                        hljs.highlightElement(block);
+                    });
+                })
+                .catch(error => {
+                    const container = document.getElementById('markdown-container');
+                    container.innerHTML = `<p style="color: red;">Error loading the file: ${file}</p>`;
+                });
+        }
+
+     
+        navLinks.forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault(); 
+                const file = link.getAttribute('data-file'); 
+
+                
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+
+                loadMarkdown(file); 
+            });
+        });
+
+        
+        loadMarkdown('NodeMcu.md');
+    </script>
+</body>
+</html>
