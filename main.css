@@ -3,19 +3,20 @@
 .btn {
     display: inline-flex;
     align-items: center;
-    padding: 10px 20px;
+    justify-content: center;
+    padding: 10px 16px;
     background-color: #24292f;
     color: white;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn i {
-    margin-right: 8px;
-    font-size: 18px;
+    margin-right: 6px;
+    font-size: 16px;
 }
 
 .btn:hover {
@@ -33,7 +34,7 @@ body {
     background-color: #0d1117;
     color: #c9d1d9;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,28 +42,32 @@ body {
 }
 
 h1 {
-    margin: 20px 0;
-    font-size: 1.8rem;
+    margin: 10px 0;
+    font-size: 1.6rem;
     color: #58a6ff;
+    text-align: center;
 }
 
 nav {
     background: #161b22;
     border: 1px solid #30363d;
     border-radius: 6px;
-    padding: 10px 20px;
+    padding: 10px 5%;
     display: flex;
-    gap: 15px;
-    margin: 20px 0;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px 0;
 }
 
 nav a {
     color: #c9d1d9;
     text-decoration: none;
-    padding: 6px 12px;
+    padding: 6px 10px;
     border-radius: 6px;
     font-weight: 600;
     transition: background 0.2s ease-in-out;
+    font-size: 14px;
 }
 
 nav a:hover {
@@ -79,42 +84,45 @@ nav a.active {
     background: #161b22;
     border: 1px solid #30363d;
     border-radius: 6px;
+    width: 95%;
     max-width: 900px;
-    width: 90%;
-    padding: 20px;
+    padding: 16px;
     margin: 10px auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-    overflow-wrap: break-word;
     word-wrap: break-word;
+    overflow-wrap: break-word;
     word-break: break-word;
 }
 
 #markdown-container h1, #markdown-container h2, #markdown-container h3 {
     color: #58a6ff;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     border-bottom: 1px solid #30363d;
     padding-bottom: 5px;
+    font-size: 1.2rem;
 }
 
 #markdown-container p {
-    line-height: 1.6;
+    line-height: 1.5;
     font-family: 'Times New Roman', Times, serif;
+    font-size: 0.9rem;
 }
 
 #markdown-container ul {
-    padding-left: 20px;
+    padding-left: 15px;
     list-style-type: disc;
 }
 
 #markdown-container a {
     color: #58a6ff;
     text-decoration: none;
-    padding: 4px 8px;
+    padding: 4px 6px;
     background: linear-gradient(135deg, #161b22, rgba(22, 27, 34, 0.7));
     border-radius: 6px;
     border: 1px solid #30363d;
     display: inline-block;
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    font-size: 0.9rem;
 }
 
 #markdown-container a:hover {
@@ -132,21 +140,21 @@ pre {
     background: #0d1117;
     border: 1px solid #30363d;
     color: #c9d1d9;
-    padding: 16px;
+    padding: 14px;
     border-radius: 6px;
     overflow-x: auto;
-    margin: 20px 0;
+    margin: 10px 0;
+    font-size: 0.85rem;
 }
 
 pre code {
     font-family: 'Fira Code', monospace;
-    font-size: 14px;
 }
 
 footer {
     margin-top: auto;
     padding: 10px 0;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #8b949e;
     text-align: center;
 }
